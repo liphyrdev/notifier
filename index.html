@@ -3,48 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrando no Jogo - Liphyr Hub</title>
+    <title>Entrando - Liphyr Hub</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d1b3d 100%);
+            background: #0a0a0a;
             color: #fff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .background-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            padding: 20px;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(142, 68, 173, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(142, 68, 173, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(142, 68, 173, 0.05) 0%, transparent 30%);
-            z-index: -1;
+                radial-gradient(circle at 20% 30%, rgba(142, 68, 173, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(142, 68, 173, 0.05) 0%, transparent 40%);
         }
         
         .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(15, 15, 15, 0.9);
+            border-radius: 16px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 25px rgba(142, 68, 173, 0.2);
+            border: 1px solid rgba(142, 68, 173, 0.15);
             text-align: center;
-            max-width: 800px;
-            padding: 40px;
-            background: rgba(10, 10, 10, 0.85);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(142, 68, 173, 0.3);
-            border: 1px solid rgba(142, 68, 173, 0.3);
-            backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
         }
@@ -52,61 +41,47 @@
         .container::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(142, 68, 173, 0.1) 0%, transparent 70%);
-            z-index: -1;
-        }
-        
-        .logo {
-            margin-bottom: 30px;
-        }
-        
-        .logo-text {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #8e44ad, #9b59b6, #8e44ad);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 30px rgba(142, 68, 173, 0.5);
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-        
-        .logo-subtitle {
-            font-size: 1.2rem;
-            color: #b19cd9;
-            letter-spacing: 3px;
-            font-weight: 300;
-            text-transform: uppercase;
-        }
-        
-        .status-box {
-            background: rgba(20, 20, 20, 0.9);
-            border-radius: 15px;
-            padding: 40px 30px;
-            margin: 30px 0;
-            border: 1px solid rgba(142, 68, 173, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .status-box::before {
-            content: '';
-            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #8e44ad, #9b59b6, #8e44ad);
+            background: linear-gradient(90deg, #8e44ad, #9b59b6);
+        }
+        
+        .logo {
+            margin-bottom: 25px;
+        }
+        
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.9rem;
+            color: #aaa;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        
+        .status-box {
+            background: rgba(25, 25, 25, 0.8);
+            border-radius: 12px;
+            padding: 25px 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(142, 68, 173, 0.1);
         }
         
         .status-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             color: #fff;
             font-weight: 600;
         }
@@ -115,16 +90,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
         
         .loading-spinner {
-            width: 70px;
-            height: 70px;
-            border: 5px solid rgba(142, 68, 173, 0.2);
-            border-top: 5px solid #8e44ad;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(142, 68, 173, 0.2);
+            border-top: 4px solid #8e44ad;
             border-radius: 50%;
-            animation: spin 1.5s linear infinite;
+            animation: spin 1.2s linear infinite;
         }
         
         @keyframes spin {
@@ -133,14 +108,14 @@
         }
         
         .loading-text {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             color: #d8bfd8;
             font-weight: 500;
         }
         
         .dots {
             display: inline-block;
-            width: 60px;
+            width: 40px;
             text-align: left;
         }
         
@@ -157,127 +132,171 @@
             50%, 100% { opacity: 1; }
         }
         
-        .game-info {
-            background: rgba(30, 30, 30, 0.7);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 30px;
-            border-left: 4px solid #8e44ad;
-        }
-        
-        .info-title {
-            color: #b19cd9;
-            font-size: 1rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .info-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 25px;
         }
         
         .info-item {
-            text-align: center;
-            flex: 1;
-            min-width: 150px;
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 10px;
+            padding: 15px 10px;
+            border-left: 3px solid #8e44ad;
         }
         
         .info-label {
             color: #aaa;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .info-value {
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
         }
         
-        .countdown {
+        .countdown-box {
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 10px;
+            padding: 15px;
             margin-top: 20px;
-            font-size: 1.1rem;
+            border: 1px solid rgba(142, 68, 173, 0.2);
+        }
+        
+        .countdown-text {
+            font-size: 1rem;
             color: #d8bfd8;
+            margin-bottom: 10px;
+        }
+        
+        .countdown-timer {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #8e44ad;
+            display: block;
         }
         
         .footer {
-            margin-top: 40px;
+            margin-top: 25px;
             padding-top: 20px;
-            border-top: 1px solid rgba(142, 68, 173, 0.2);
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        .footer a {
-            color: #9b59b6;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer a:hover {
-            color: #8e44ad;
-            text-decoration: underline;
+            border-top: 1px solid rgba(142, 68, 173, 0.1);
+            color: #777;
+            font-size: 0.8rem;
         }
         
         .credit {
-            margin-top: 10px;
-            font-size: 1.1rem;
-            color: #b19cd9;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #9b59b6;
             font-weight: 600;
         }
         
         .pulse {
-            animation: pulse 2s infinite;
+            animation: pulse 1.5s infinite;
         }
         
         @keyframes pulse {
-            0% { opacity: 0.7; }
+            0% { opacity: 0.8; }
             50% { opacity: 1; }
-            100% { opacity: 0.7; }
+            100% { opacity: 0.8; }
         }
         
-        @media (max-width: 768px) {
+        /* Efeito de brilho sutil */
+        .glow {
+            text-shadow: 0 0 15px rgba(142, 68, 173, 0.4);
+        }
+        
+        /* Mobile ajustes */
+        @media (max-width: 480px) {
             .container {
-                margin: 20px;
-                padding: 30px 20px;
+                padding: 25px 20px;
+                margin: 10px;
             }
             
             .logo-text {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
             
             .status-title {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
             
-            .info-content {
-                flex-direction: column;
-                gap: 10px;
+            .loading-spinner {
+                width: 45px;
+                height: 45px;
             }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .info-item {
+                padding: 12px 10px;
+            }
+        }
+        
+        /* Desktop pequeno */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                max-width: 450px;
+            }
+        }
+        
+        /* Para telas muito pequenas (celulares antigos) */
+        @media (max-width: 360px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .logo-text {
+                font-size: 1.6rem;
+            }
+            
+            .status-title {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Animações suaves */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.4s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-10px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <div class="background-pattern"></div>
-    
-    <div class="container">
+    <div class="container fade-in">
         <div class="logo">
-            <h1 class="logo-text">LIPHYR HUB</h1>
+            <h1 class="logo-text glow">LIPHYR</h1>
             <div class="logo-subtitle">Proxy System</div>
         </div>
         
-        <div class="status-box">
+        <div class="status-box slide-in">
             <h2 class="status-title">ENTRANDO NO JOGO</h2>
             
             <div class="loading-container">
                 <div class="loading-spinner"></div>
                 <div class="loading-text">
-                    Conectando ao servidor
+                    Conectando
                     <span class="dots">
                         <span class="dot">.</span>
                         <span class="dot">.</span>
@@ -286,70 +305,83 @@
                 </div>
             </div>
             
-            <div class="game-info">
-                <div class="info-title">Informações da Conexão</div>
-                <div class="info-content">
-                    <div class="info-item">
-                        <div class="info-label">Status</div>
-                        <div class="info-value pulse" id="status">Iniciando</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Tempo</div>
-                        <div class="info-value" id="timer">0s</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Proxy</div>
-                        <div class="info-value">Ativo</div>
-                    </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Status</div>
+                    <div class="info-value pulse" id="status">Iniciando</div>
                 </div>
-                
-                <div class="countdown" id="countdown">
-                    Redirecionando em: <span id="seconds">5</span> segundos
+                <div class="info-item">
+                    <div class="info-label">Tempo</div>
+                    <div class="info-value" id="timer">0s</div>
                 </div>
+                <div class="info-item">
+                    <div class="info-label">Proxy</div>
+                    <div class="info-value">Ativo</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Servidor</div>
+                    <div class="info-value" id="server">-</div>
+                </div>
+            </div>
+            
+            <div class="countdown-box">
+                <div class="countdown-text">Redirecionando em:</div>
+                <div class="countdown-timer" id="seconds">5</div>
             </div>
         </div>
         
         <div class="footer">
-            <p>Sistema de conexão otimizada | Automatização segura</p>
-            <p class="credit">Desenvolvido por <strong>LIPHYR HUB</strong></p>
-            <p style="margin-top: 15px; font-size: 0.8rem; color: #666;">
-                Esta página será fechada automaticamente quando a conexão for estabelecida.
-            </p>
+            <p>Sistema de conexão otimizada</p>
+            <p class="credit">LIPHYR HUB</p>
         </div>
     </div>
 
     <script>
-        // URL de redirecionamento (substitua pelo seu link de join)
-        const redirectUrl = new URLSearchParams(window.location.search).get('redirect') || 
-                           'roblox://placeId=' + (new URLSearchParams(window.location.search).get('placeId') || '0');
+        // Obter parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const placeId = urlParams.get('placeId');
+        const jobId = urlParams.get('gameInstanceId');
+        
+        // Gerar URL de redirecionamento
+        let redirectUrl;
+        if (placeId && jobId) {
+            redirectUrl = `roblox://placeId=${placeId}&gameInstanceId=${jobId}`;
+        } else {
+            redirectUrl = 'roblox://';
+        }
         
         // Elementos DOM
         const statusEl = document.getElementById('status');
         const timerEl = document.getElementById('timer');
         const secondsEl = document.getElementById('seconds');
-        const countdownEl = document.getElementById('countdown');
+        const serverEl = document.getElementById('server');
         
-        // Estados da conexão
+        // Estados da conexão (mais curtos)
         const connectionSteps = [
-            'Iniciando conexão...',
-            'Conectando ao proxy...',
-            'Estabelecendo servidor...',
+            'Iniciando...',
+            'Conectando proxy...',
+            'Servidor...',
             'Autenticando...',
-            'Carregando dados...',
-            'Pronto para entrar!'
+            'Carregando...',
+            'Pronto!'
         ];
         
+        // Configurações
         let currentStep = 0;
         let seconds = 5;
         let timerSeconds = 0;
+        let serverCode = '#' + Math.random().toString(36).substr(2, 6).toUpperCase();
         
-        // Atualizar timer
+        // Mostrar código do servidor
+        serverEl.textContent = serverCode;
+        
+        // Timer principal
         const timerInterval = setInterval(() => {
             timerSeconds++;
             timerEl.textContent = timerSeconds + 's';
         }, 1000);
         
-        // Simular progresso da conexão
+        // Progresso da conexão
         const progressInterval = setInterval(() => {
             if (currentStep < connectionSteps.length - 1) {
                 currentStep++;
@@ -357,61 +389,31 @@
                 
                 // Efeito visual
                 statusEl.classList.remove('pulse');
-                void statusEl.offsetWidth; // Trigger reflow
+                void statusEl.offsetWidth;
                 statusEl.classList.add('pulse');
             }
-        }, 800);
+        }, 700);
         
-        // Contagem regressiva para redirecionamento
+        // Contagem regressiva
         const countdownInterval = setInterval(() => {
             seconds--;
             secondsEl.textContent = seconds;
             
-            if (seconds <= 0) {
-                clearInterval(countdownInterval);
-                clearInterval(progressInterval);
-                clearInterval(timerInterval);
-                
-                // Redirecionar
-                statusEl.textContent = 'Redirecionando...';
-                countdownEl.innerHTML = '<strong style="color: #9b59b6;">Conectado! Redirecionando...</strong>';
-                
-                setTimeout(() => {
-                    // Tenta abrir o link do Roblox
-                    window.location.href = redirectUrl;
-                    
-                    // Fallback: se não conseguir abrir o Roblox, mostra mensagem
-                    setTimeout(() => {
-                        document.body.innerHTML = `
-                            <div class="container">
-                                <div class="logo">
-                                    <h1 class="logo-text">LIPHYR HUB</h1>
-                                </div>
-                                <div class="status-box">
-                                    <h2 class="status-title">CONEXÃO ESTABELECIDA!</h2>
-                                    <p style="margin: 20px 0; font-size: 1.2rem;">
-                                        O jogo deve abrir automaticamente no Roblox.
-                                    </p>
-                                    <p style="color: #b19cd9; margin-top: 20px;">
-                                        Se o jogo não abrir, clique manualmente no Roblox.
-                                    </p>
-                                </div>
-                                <div class="footer">
-                                    <p class="credit">Desenvolvido por <strong>LIPHYR HUB</strong></p>
-                                </div>
-                            </div>
-                        `;
-                    }, 2000);
-                }, 1000);
+            // Mudar cor nos últimos segundos
+            if (seconds <= 2) {
+                secondsEl.style.color = '#ff6b6b';
+                secondsEl.style.transform = 'scale(1.1)';
+            } else if (seconds <= 5) {
+                secondsEl.style.color = '#f39c12';
             }
             
-            // Muda a cor quando faltam poucos segundos
-            if (seconds <= 3) {
-                secondsEl.style.color = '#ff6b6b';
+            if (seconds <= 0) {
+                clearAllIntervals();
+                redirectToGame();
             }
         }, 1000);
         
-        // Efeito de digitação para o título
+        // Efeito de digitação no título
         const title = document.querySelector('.status-title');
         const originalText = title.textContent;
         title.textContent = '';
@@ -424,24 +426,68 @@
             } else {
                 clearInterval(typeInterval);
             }
-        }, 100);
+        }, 80);
         
-        // Adiciona alguns efeitos aleatórios de status
+        // Efeitos aleatórios de status
         setTimeout(() => {
-            const extraStatus = [
-                'Otimizando rede...',
-                'Verificando segurança...',
-                'Sincronizando dados...'
-            ];
+            if (Math.random() > 0.5) {
+                const tempStatus = statusEl.textContent;
+                statusEl.textContent = 'Otimizando...';
+                setTimeout(() => {
+                    statusEl.textContent = tempStatus;
+                }, 800);
+            }
+        }, 1500);
+        
+        // Funções auxiliares
+        function clearAllIntervals() {
+            clearInterval(countdownInterval);
+            clearInterval(progressInterval);
+            clearInterval(timerInterval);
+        }
+        
+        function redirectToGame() {
+            statusEl.textContent = 'Redirecionando!';
+            statusEl.style.color = '#2ecc71';
             
-            const randomStatus = extraStatus[Math.floor(Math.random() * extraStatus.length)];
-            const tempStatus = statusEl.textContent;
-            
-            statusEl.textContent = randomStatus;
+            // Tentar abrir Roblox
             setTimeout(() => {
-                statusEl.textContent = tempStatus;
-            }, 1200);
-        }, 2500);
+                window.location.href = redirectUrl;
+                
+                // Fallback
+                setTimeout(() => {
+                    showFallbackMessage();
+                }, 1500);
+            }, 800);
+        }
+        
+        function showFallbackMessage() {
+            document.body.innerHTML = `
+                <div class="container fade-in">
+                    <div class="logo">
+                        <h1 class="logo-text glow">LIPHYR</h1>
+                    </div>
+                    <div class="status-box">
+                        <h2 class="status-title">CONEXÃO CONCLUÍDA</h2>
+                        <p style="margin: 15px 0; color: #aaa;">
+                            O jogo deve abrir no Roblox.
+                        </p>
+                        <p style="color: #9b59b6; margin-top: 10px; font-size: 0.9rem;">
+                            Se não abrir, clique manualmente.
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <p class="credit">LIPHYR HUB</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Detectar dispositivo
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            document.querySelector('.container').style.maxWidth = '95%';
+        }
     </script>
 </body>
 </html>

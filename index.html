@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrando - Liphyr Hub</title>
+    <title>Entrando - Wave Notifier</title>
     <style>
         * {
             margin: 0;
@@ -21,8 +21,8 @@
             align-items: center;
             padding: 20px;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(142, 68, 173, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(142, 68, 173, 0.05) 0%, transparent 40%);
+                radial-gradient(circle at 20% 30%, rgba(135, 206, 235, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(135, 206, 235, 0.05) 0%, transparent 40%);
         }
         
         .container {
@@ -31,8 +31,8 @@
             background: rgba(15, 15, 15, 0.95);
             border-radius: 12px;
             padding: 25px 20px;
-            box-shadow: 0 8px 25px rgba(142, 68, 173, 0.25);
-            border: 1px solid rgba(142, 68, 173, 0.2);
+            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.25);
+            border: 1px solid rgba(135, 206, 235, 0.2);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -45,7 +45,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, #8e44ad, #9b59b6);
+            background: linear-gradient(90deg, #87CEEB, #5dade2);
         }
         
         .logo {
@@ -55,7 +55,7 @@
         .logo-text {
             font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+            background: linear-gradient(45deg, #87CEEB, #5dade2);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -76,7 +76,7 @@
             border-radius: 10px;
             padding: 20px 15px;
             margin: 15px 0;
-            border: 1px solid rgba(142, 68, 173, 0.15);
+            border: 1px solid rgba(135, 206, 235, 0.15);
         }
         
         .status-title {
@@ -96,8 +96,8 @@
         .loading-spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid rgba(142, 68, 173, 0.2);
-            border-top: 3px solid #8e44ad;
+            border: 3px solid rgba(135, 206, 235, 0.2);
+            border-top: 3px solid #87CEEB;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
         }
@@ -109,7 +109,7 @@
         
         .loading-text {
             font-size: 1.1rem;
-            color: #d8bfd8;
+            color: #b8e0f0;
             font-weight: 500;
         }
         
@@ -143,7 +143,7 @@
             background: rgba(30, 30, 30, 0.8);
             border-radius: 8px;
             padding: 12px 8px;
-            border-left: 3px solid #8e44ad;
+            border-left: 3px solid #87CEEB;
         }
         
         .info-label {
@@ -165,26 +165,26 @@
             border-radius: 8px;
             padding: 12px;
             margin-top: 18px;
-            border: 1px solid rgba(142, 68, 173, 0.2);
+            border: 1px solid rgba(135, 206, 235, 0.2);
         }
         
         .countdown-text {
             font-size: 0.9rem;
-            color: #d8bfd8;
+            color: #b8e0f0;
             margin-bottom: 8px;
         }
         
         .countdown-timer {
             font-size: 1.2rem;
             font-weight: 700;
-            color: #8e44ad;
+            color: #87CEEB;
             display: block;
         }
         
         .footer {
             margin-top: 20px;
             padding-top: 15px;
-            border-top: 1px solid rgba(142, 68, 173, 0.1);
+            border-top: 1px solid rgba(135, 206, 235, 0.1);
             color: #777;
             font-size: 0.75rem;
         }
@@ -192,7 +192,7 @@
         .credit {
             margin-top: 6px;
             font-size: 0.85rem;
-            color: #9b59b6;
+            color: #5dade2;
             font-weight: 600;
         }
         
@@ -272,9 +272,9 @@
         
         /* Botão para pular espera */
         .skip-btn {
-            background: rgba(142, 68, 173, 0.2);
-            color: #9b59b6;
-            border: 1px solid rgba(142, 68, 173, 0.4);
+            background: rgba(135, 206, 235, 0.2);
+            color: #5dade2;
+            border: 1px solid rgba(135, 206, 235, 0.4);
             border-radius: 6px;
             padding: 8px 16px;
             font-size: 0.85rem;
@@ -285,7 +285,7 @@
         }
         
         .skip-btn:hover {
-            background: rgba(142, 68, 173, 0.3);
+            background: rgba(135, 206, 235, 0.3);
             transform: translateY(-1px);
         }
         
@@ -298,7 +298,7 @@
 <body>
     <div class="container fade-in">
         <div class="logo">
-            <h1 class="logo-text">LIPHYR</h1>
+            <h1 class="logo-text">WAVE NOTIFIER</h1>
             <div class="logo-subtitle">Fast Connection</div>
         </div>
         
@@ -346,7 +346,7 @@
         
         <div class="footer">
             <p>Conexão otimizada e acelerada</p>
-            <p class="credit">LIPHYR HUB FAST</p>
+            <p class="credit">WAVE NOTIFIER FAST</p>
         </div>
     </div>
 
@@ -472,20 +472,20 @@
                 document.body.innerHTML = `
                     <div class="container fade-in">
                         <div class="logo">
-                            <h1 class="logo-text">LIPHYR</h1>
+                            <h1 class="logo-text">WAVE NOTIFIER</h1>
                         </div>
                         <div class="status-box">
                             <h2 class="status-title">CONEXÃO CONCLUÍDA</h2>
                             <p style="margin: 15px 0; color: #aaa; font-size: 0.95rem;">
                                 O jogo deve abrir automaticamente.
                             </p>
-                            <p style="color: #9b59b6; margin-top: 10px; font-size: 0.85rem;">
+                            <p style="color: #5dade2; margin-top: 10px; font-size: 0.85rem;">
                                 Se não abrir, clique no jogo manualmente.
                             </p>
                             <button class="skip-btn" onclick="window.location.href='${redirectUrl}'">TENTAR NOVAMENTE</button>
                         </div>
                         <div class="footer">
-                            <p class="credit">LIPHYR HUB FAST</p>
+                            <p class="credit">WAVE NOTIFIER FAST</p>
                         </div>
                     </div>
                 `;

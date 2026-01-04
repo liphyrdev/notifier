@@ -307,13 +307,11 @@
         const timeEl = document.getElementById('time');
         const serverEl = document.getElementById('server');
 
-        // Atualiza tempo
         const timeInterval = setInterval(() => {
             time++;
             timeEl.textContent = time + 's';
         }, 1000);
 
-        // Simula status de conexão
         setTimeout(() => {
             statusEl.textContent = 'Conectando';
         }, 300);
@@ -323,7 +321,6 @@
             serverEl.textContent = 'BR-01';
         }, 600);
 
-        // Countdown rápido
         const countInterval = setInterval(() => {
             count--;
             countdownEl.textContent = count;
@@ -331,18 +328,10 @@
             if (count <= 0) {
                 clearInterval(countInterval);
                 clearInterval(timeInterval);
-                countdownEl.style.display = 'none';
-                btnEnter.classList.add('show');
-                statusEl.textContent = 'Pronto';
+                statusEl.textContent = 'Redirecionando';
+                window.location.href = 'https://www.roblox.com';
             }
         }, 800);
-
-        btnEnter.addEventListener('click', () => {
-            btnEnter.textContent = 'ENTRANDO...';
-            setTimeout(() => {
-                alert('Redirecionando para o sistema...');
-            }, 300);
-        });
     </script>
 </body>
 </html>

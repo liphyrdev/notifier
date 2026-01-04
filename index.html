@@ -20,6 +20,7 @@
             align-items: center;
             color: #fff;
             overflow: hidden;
+            padding: 20px;
         }
 
         .background-animation {
@@ -70,7 +71,7 @@
             box-shadow: 0 20px 60px rgba(135, 206, 235, 0.3), 
                         0 0 80px rgba(135, 206, 235, 0.1);
             max-width: 480px;
-            width: 90%;
+            width: 100%;
             text-align: center;
         }
 
@@ -204,6 +205,154 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
         }
+
+        /* RESPONSIVO PARA TABLETS */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 45px;
+                max-width: 420px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+                margin-bottom: 35px;
+            }
+
+            .connection-box {
+                padding: 25px;
+            }
+
+            .connection-title {
+                font-size: 16px;
+            }
+
+            .connecting-text {
+                font-size: 15px;
+            }
+
+            .info-value {
+                font-size: 18px;
+            }
+
+            .countdown {
+                font-size: 42px;
+            }
+        }
+
+        /* RESPONSIVO PARA CELULARES */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 30px 25px;
+                border-radius: 20px;
+            }
+
+            .logo {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .subtitle {
+                font-size: 11px;
+                margin-bottom: 25px;
+            }
+
+            .connection-box {
+                padding: 20px;
+                border-radius: 14px;
+                margin-bottom: 20px;
+            }
+
+            .connection-title {
+                font-size: 14px;
+                margin-bottom: 15px;
+                letter-spacing: 1px;
+            }
+
+            .connecting-text {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .info-grid {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .info-item {
+                padding: 12px 10px;
+                border-radius: 10px;
+            }
+
+            .info-label {
+                font-size: 9px;
+                margin-bottom: 6px;
+            }
+
+            .info-value {
+                font-size: 16px;
+            }
+
+            .progress-bar {
+                height: 6px;
+                margin-bottom: 12px;
+            }
+
+            .countdown {
+                font-size: 36px;
+                margin: 15px 0;
+            }
+
+            .footer-text {
+                margin-top: 20px;
+                font-size: 11px;
+            }
+
+            .logo.footer-logo {
+                font-size: 13px;
+                margin-top: 8px;
+            }
+
+            .status-dot {
+                width: 8px;
+                height: 8px;
+                margin-right: 6px;
+            }
+
+            .redirect-text {
+                font-size: 12px;
+            }
+        }
+
+        /* RESPONSIVO PARA CELULARES MUITO PEQUENOS */
+        @media (max-width: 360px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .connection-title {
+                font-size: 13px;
+            }
+
+            .info-value {
+                font-size: 15px;
+            }
+
+            .countdown {
+                font-size: 32px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -244,14 +393,14 @@
                 <div class="progress-fill"></div>
             </div>
 
-            <div style="color: #87CEEB; font-size: 14px; margin-bottom: 10px; font-weight: 600;">
+            <div class="redirect-text" style="color: #87CEEB; font-size: 14px; margin-bottom: 10px; font-weight: 600;">
                 <span class="status-dot"></span>Redirecionando em:
             </div>
             <div class="countdown" id="countdown">3</div>
         </div>
 
         <div class="footer-text">Conexão otimizada e acelerada</div>
-        <div class="logo" style="font-size: 16px; margin-top: 10px;">WAVE NOTIFIER FAST</div>
+        <div class="logo footer-logo" style="font-size: 16px; margin-top: 10px;">WAVE NOTIFIER FAST</div>
     </div>
 
     <script>

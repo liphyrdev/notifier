@@ -292,8 +292,6 @@
             <div class="countdown" id="countdown">3</div>
         </div>
 
-        <button class="btn-enter" id="btnEnter">ENTRAR AGORA</button>
-
         <div class="footer-text">Conexão otimizada e acelerada</div>
         <div class="logo" style="font-size: 16px; margin-top: 10px;">WAVE NOTIFIER FAST</div>
     </div>
@@ -329,7 +327,13 @@
                 clearInterval(countInterval);
                 clearInterval(timeInterval);
                 statusEl.textContent = 'Redirecionando';
-                window.location.href = 'https://www.roblox.com';
+                
+                // Place ID e Job ID do jogo
+                const placeId = '109983668079237';
+                const jobId = 'YOUR_JOB_ID_HERE'; // Coloque o Job ID aqui
+                
+                // Redireciona para o jogo específico do Roblox
+                window.location.href = `roblox://placeId=${placeId}&jobId=${jobId}`;
             }
         }, 800);
     </script>

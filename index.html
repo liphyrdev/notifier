@@ -165,7 +165,7 @@
             height: 100%;
             background: linear-gradient(90deg, #87CEEB 0%, #4FC3F7 100%);
             border-radius: 10px;
-            animation: progress 0.8s ease-out forwards;
+            animation: progress 0.15s ease-out forwards;
             box-shadow: 0 0 20px rgba(135, 206, 235, 0.6);
         }
 
@@ -180,48 +180,6 @@
             color: #87CEEB;
             margin: 20px 0;
             text-shadow: 0 0 30px rgba(135, 206, 235, 0.8);
-        }
-
-        .btn-enter {
-            width: 100%;
-            padding: 18px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #000;
-            background: linear-gradient(135deg, #87CEEB 0%, #4FC3F7 100%);
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(135, 206, 235, 0.4);
-            display: none;
-        }
-
-        .btn-enter:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(135, 206, 235, 0.6);
-        }
-
-        .btn-enter:active {
-            transform: translateY(-1px);
-        }
-
-        .btn-enter.show {
-            display: block;
-            animation: fadeInUp 0.4s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .footer-text {
@@ -300,7 +258,6 @@
         let count = 3;
         let time = 0;
         const countdownEl = document.getElementById('countdown');
-        const btnEnter = document.getElementById('btnEnter');
         const statusEl = document.getElementById('status');
         const timeEl = document.getElementById('time');
         const serverEl = document.getElementById('server');
@@ -310,14 +267,9 @@
             timeEl.textContent = time + 's';
         }, 1000);
 
-        setTimeout(() => {
-            statusEl.textContent = 'Conectando';
-        }, 300);
-
-        setTimeout(() => {
-            statusEl.textContent = 'Conectado';
-            serverEl.textContent = 'BR-01';
-        }, 600);
+        statusEl.textContent = 'Conectando';
+        serverEl.textContent = 'BR-01';
+        statusEl.textContent = 'Conectado';
 
         const countInterval = setInterval(() => {
             count--;
@@ -338,7 +290,7 @@
                 // Redireciona para o jogo do Roblox
                 window.location.href = `roblox://placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
             }
-        }, 800);
+        }, 1);
     </script>
 </body>
 </html>

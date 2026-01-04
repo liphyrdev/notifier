@@ -328,12 +328,15 @@
                 clearInterval(timeInterval);
                 statusEl.textContent = 'Redirecionando';
                 
-                // Place ID e Job ID do jogo
-                const placeId = '109983668079237';
-                const jobId = 'YOUR_JOB_ID_HERE'; // Coloque o Job ID aqui
+                // Pega o gameInstanceId da URL atual
+                const urlParams = new URLSearchParams(window.location.search);
+                const gameInstanceId = urlParams.get('gameInstanceId') || 'default-instance';
                 
-                // Redireciona para o jogo específico do Roblox
-                window.location.href = `roblox://placeId=${placeId}&jobId=${jobId}`;
+                // Place ID fixo
+                const placeId = '109983668079237';
+                
+                // Redireciona para o jogo do Roblox
+                window.location.href = `roblox://placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
             }
         }, 800);
     </script>

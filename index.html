@@ -19,7 +19,7 @@
             justify-content: center;
             align-items: center;
             color: #fff;
-            padding: 20px;
+            padding: 10px;
         }
 
         .background-animation {
@@ -69,10 +69,10 @@
             backdrop-filter: blur(10px);
             border: 2px solid #FFD700;
             border-radius: 30px;
-            padding: 40px;
+            padding: 25px 35px;
             box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3), 
                         0 0 80px rgba(153, 50, 204, 0.2);
-            max-width: 500px;
+            max-width: 650px;
             width: 100%;
             text-align: center;
         }
@@ -82,20 +82,20 @@
         }
 
         .logo-zenith {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 900;
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             line-height: 1.2;
         }
 
         .logo-liphyr {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 800;
             background: linear-gradient(135deg, #9932CC 0%, #8A2BE2 100%);
             -webkit-background-clip: text;
@@ -105,13 +105,13 @@
             text-transform: uppercase;
             text-shadow: 0 0 15px rgba(153, 50, 204, 0.5);
             line-height: 1.2;
-            margin-top: -5px;
+            margin-top: -8px;
         }
 
         .subtitle {
-            font-size: 16px;
+            font-size: 18px;
             color: #FFD700;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 500;
             letter-spacing: 1px;
             opacity: 0.9;
@@ -126,7 +126,7 @@
         }
 
         .connection-title {
-            font-size: 18px;
+            font-size: 20px;
             color: #FFD700;
             margin-bottom: 15px;
             font-weight: 700;
@@ -135,7 +135,7 @@
         }
 
         .connecting-text {
-            font-size: 16px;
+            font-size: 18px;
             color: #fff;
             margin-bottom: 25px;
             animation: pulse 1.2s ease-in-out infinite;
@@ -149,7 +149,7 @@
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-bottom: 25px;
         }
@@ -165,13 +165,9 @@
         .info-item:nth-child(3) {
             border-color: rgba(153, 50, 204, 0.3);
         }
-        
-        .info-item:nth-child(4) {
-            border-color: rgba(153, 50, 204, 0.3);
-        }
 
         .info-label {
-            font-size: 12px;
+            font-size: 13px;
             color: #FFD700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -179,13 +175,12 @@
             font-weight: 600;
         }
 
-        .info-item:nth-child(3) .info-label,
-        .info-item:nth-child(4) .info-label {
+        .info-item:nth-child(3) .info-label {
             color: #9932CC;
         }
 
         .info-value {
-            font-size: 22px;
+            font-size: 24px;
             color: #fff;
             font-weight: 700;
             line-height: 1.2;
@@ -213,13 +208,13 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .status-dot {
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: #FFD700;
             border-radius: 50%;
             animation: blink 1s ease-in-out infinite;
@@ -233,25 +228,25 @@
 
         .redirect-text {
             color: #FFD700;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
 
         .countdown {
-            font-size: 58px;
+            font-size: 64px;
             font-weight: 800;
             background: linear-gradient(135deg, #FFD700 0%, #9932CC 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1;
-            margin: 5px 0;
+            margin: 0 0 5px 0;
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
         }
 
         .footer-text {
-            font-size: 14px;
+            font-size: 15px;
             color: #FFD700;
             font-weight: 500;
             margin-bottom: 15px;
@@ -262,13 +257,13 @@
             background: rgba(153, 50, 204, 0.15);
             border: 1px solid rgba(153, 50, 204, 0.4);
             border-radius: 50px;
-            padding: 12px 25px;
+            padding: 12px 30px;
             display: inline-block;
         }
 
         .discord-text {
             color: #9932CC;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
             letter-spacing: 1px;
         }
@@ -278,38 +273,30 @@
             font-weight: 700;
         }
 
-        /* RESPONSIVO */
-        @media (max-width: 500px) {
+        /* RESPONSIVO PARA TABLETS E TELAS MÉDIAS */
+        @media (max-width: 600px) {
             .container {
-                padding: 30px 20px;
+                padding: 20px 25px;
+                max-width: 500px;
             }
 
             .logo-zenith {
-                font-size: 34px;
-                letter-spacing: 2px;
+                font-size: 40px;
+                letter-spacing: 3px;
             }
 
             .logo-liphyr {
-                font-size: 22px;
+                font-size: 26px;
                 letter-spacing: 1px;
             }
 
             .subtitle {
-                font-size: 14px;
-                margin-bottom: 25px;
+                font-size: 16px;
+                margin-bottom: 20px;
             }
 
             .connection-box {
                 padding: 20px;
-            }
-
-            .connection-title {
-                font-size: 16px;
-            }
-
-            .connecting-text {
-                font-size: 15px;
-                margin-bottom: 20px;
             }
 
             .info-grid {
@@ -321,24 +308,89 @@
             }
 
             .info-label {
-                font-size: 11px;
-                margin-bottom: 5px;
+                font-size: 12px;
+            }
+
+            .info-value {
+                font-size: 20px;
+            }
+
+            .countdown {
+                font-size: 54px;
+            }
+        }
+
+        /* RESPONSIVO PARA CELULARES */
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+
+            .container {
+                padding: 18px 18px;
+            }
+
+            .logo-zenith {
+                font-size: 34px;
+                letter-spacing: 2px;
+            }
+
+            .logo-liphyr {
+                font-size: 22px;
+                margin-top: -5px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                margin-bottom: 18px;
+            }
+
+            .connection-box {
+                padding: 18px 15px;
+            }
+
+            .connection-title {
+                font-size: 18px;
+            }
+
+            .connecting-text {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .info-grid {
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .info-item {
+                padding: 10px 5px;
+            }
+
+            .info-label {
+                font-size: 10px;
+                margin-bottom: 4px;
             }
 
             .info-value {
                 font-size: 18px;
             }
 
-            .countdown {
-                font-size: 48px;
-            }
-
             .redirect-text {
                 font-size: 14px;
             }
 
+            .countdown {
+                font-size: 48px;
+            }
+
+            .footer-text {
+                font-size: 13px;
+                margin-bottom: 12px;
+            }
+
             .discord-box {
-                padding: 10px 20px;
+                padding: 8px 20px;
             }
 
             .discord-text {
@@ -346,6 +398,7 @@
             }
         }
 
+        /* CELULARES PEQUENOS */
         @media (max-width: 360px) {
             .logo-zenith {
                 font-size: 28px;
@@ -355,12 +408,24 @@
                 font-size: 18px;
             }
 
+            .subtitle {
+                font-size: 13px;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
             .info-value {
                 font-size: 16px;
             }
 
             .countdown {
                 font-size: 42px;
+            }
+
+            .discord-text {
+                font-size: 12px;
             }
         }
     </style>
@@ -387,10 +452,6 @@
                 <div class="info-item">
                     <div class="info-label">STATUS</div>
                     <div class="info-value" id="status">Iniciando</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">TEMPO</div>
-                    <div class="info-value" id="time">0s</div>
                 </div>
                 <div class="info-item">
                     <div class="info-label">PROXY</div>
@@ -422,10 +483,8 @@
 
     <script>
         let count = 3;
-        let time = 0;
         const countdownEl = document.getElementById('countdown');
         const statusEl = document.getElementById('status');
-        const timeEl = document.getElementById('time');
         const serverEl = document.getElementById('server');
 
         // Atualiza o status inicial
@@ -437,18 +496,12 @@
             statusEl.textContent = 'Conectado';
         }, 500);
 
-        const timeInterval = setInterval(() => {
-            time++;
-            timeEl.textContent = time + 's';
-        }, 1000);
-
         const countInterval = setInterval(() => {
             count--;
             countdownEl.textContent = count;
             
             if (count <= 0) {
                 clearInterval(countInterval);
-                clearInterval(timeInterval);
                 statusEl.textContent = 'Redirecionando';
                 
                 // Pega o gameInstanceId da URL atual
@@ -461,7 +514,7 @@
                 // Redireciona para o jogo do Roblox
                 window.location.href = `roblox://placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
             }
-        }, 1000); // Mudado de 1ms para 1000ms (1 segundo)
+        }, 1000);
     </script>
 </body>
 </html>

@@ -175,14 +175,6 @@
             100% { width: 100%; }
         }
 
-        .countdown {
-            font-size: 48px;
-            font-weight: 700;
-            color: #9b59b6;
-            margin: 20px 0;
-            text-shadow: 0 0 30px rgba(155, 89, 182, 0.8);
-        }
-
         .footer-text {
             margin-top: 25px;
             font-size: 13px;
@@ -204,6 +196,13 @@
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
+        }
+
+        .redirect-text {
+            color: #9b59b6;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         /* RESPONSIVO PARA TABLETS */
@@ -236,10 +235,6 @@
 
             .info-value {
                 font-size: 18px;
-            }
-
-            .countdown {
-                font-size: 42px;
             }
         }
 
@@ -305,11 +300,6 @@
                 margin-bottom: 12px;
             }
 
-            .countdown {
-                font-size: 36px;
-                margin: 15px 0;
-            }
-
             .footer-text {
                 margin-top: 20px;
                 font-size: 11px;
@@ -347,10 +337,6 @@
 
             .info-value {
                 font-size: 15px;
-            }
-
-            .countdown {
-                font-size: 32px;
             }
         }
     </style>
@@ -393,10 +379,9 @@
                 <div class="progress-fill"></div>
             </div>
 
-            <div class="redirect-text" style="color: #9b59b6; font-size: 14px; margin-bottom: 10px; font-weight: 600;">
-                <span class="status-dot"></span>Redirecionando em:
+            <div class="redirect-text">
+                <span class="status-dot"></span>Redirecionando...
             </div>
-            <div class="countdown" id="countdown">3</div>
         </div>
 
         <div class="footer-text">Conexão otimizada e acelerada</div>
@@ -404,42 +389,38 @@
     </div>
 
     <script>
-        let count = 3;
-        let time = 0;
-        const countdownEl = document.getElementById('countdown');
+        // Atualiza status inicial
         const statusEl = document.getElementById('status');
         const timeEl = document.getElementById('time');
         const serverEl = document.getElementById('server');
-
+        
+        let time = 0;
+        
+        // Inicia contador de tempo
         const timeInterval = setInterval(() => {
             time++;
             timeEl.textContent = time + 's';
         }, 1000);
-
-        statusEl.textContent = 'Conectando';
-        serverEl.textContent = 'BR-01';
+        
+        // Atualiza status
         statusEl.textContent = 'Conectado';
-
-        const countInterval = setInterval(() => {
-            count--;
-            countdownEl.textContent = count;
+        serverEl.textContent = 'BR-01';
+        
+        // Redirecionamento instantâneo
+        setTimeout(() => {
+            clearInterval(timeInterval);
+            statusEl.textContent = 'Redirecionando';
             
-            if (count <= 0) {
-                clearInterval(countInterval);
-                clearInterval(timeInterval);
-                statusEl.textContent = 'Redirecionando';
-                
-                // Pega o gameInstanceId da URL atual
-                const urlParams = new URLSearchParams(window.location.search);
-                const gameInstanceId = urlParams.get('gameInstanceId') || 'default-instance';
-                
-                // Place ID fixo
-                const placeId = '109983668079237';
-                
-                // Redireciona para o jogo do Roblox
-                window.location.href = `roblox://placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
-            }
-        }, 1000); // Alterado de 1ms para 1000ms (1 segundo) para contagem correta
+            // Pega o gameInstanceId da URL atual
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameInstanceId = urlParams.get('gameInstanceId') || 'default-instance';
+            
+            // Place ID fixo
+            const placeId = '109983668079237';
+            
+            // Redireciona para o jogo do Roblox
+            window.location.href = `roblox://placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
+        }, 100); // Redireciona após apenas 100ms (instantâneo)
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith X Liphyr</title>
+    <title>Zyra Notifier Fast</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #000000 0%, #1a0a1a 100%);
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -30,24 +30,22 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            opacity: 0.15;
+            opacity: 0.1;
         }
 
         .wave {
             position: absolute;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, #FFD700 0%, transparent 70%);
+            background: radial-gradient(circle, #9b59b6 0%, transparent 70%);
             animation: wave 3s ease-in-out infinite;
         }
 
         .wave:nth-child(2) {
-            background: radial-gradient(circle, #9932CC 0%, transparent 70%);
             animation-delay: 1s;
         }
 
         .wave:nth-child(3) {
-            background: radial-gradient(circle, #FFD700 0%, transparent 70%);
             animation-delay: 2s;
         }
 
@@ -65,67 +63,50 @@
         .container {
             position: relative;
             z-index: 1;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(10px);
-            border: 2px solid #FFD700;
+            border: 2px solid #9b59b6;
             border-radius: 24px;
-            padding: 40px 50px;
-            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3), 
-                        0 0 80px rgba(153, 50, 204, 0.2);
-            max-width: 700px;
+            padding: 50px 60px;
+            box-shadow: 0 20px 60px rgba(155, 89, 182, 0.3), 
+                        0 0 80px rgba(155, 89, 182, 0.1);
+            max-width: 480px;
             width: 100%;
             text-align: center;
         }
 
-        .logo-container {
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
             margin-bottom: 10px;
-        }
-
-        .logo-zenith {
-            font-size: 36px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .logo-liphyr {
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #9932CC 0%, #8A2BE2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-top: -5px;
-            text-shadow: 0 0 15px rgba(153, 50, 204, 0.5);
         }
 
         .subtitle {
             font-size: 14px;
-            color: #FFD700;
-            margin-bottom: 30px;
+            color: #9b59b6;
+            margin-bottom: 40px;
             font-weight: 500;
             letter-spacing: 1px;
         }
 
         .connection-box {
-            background: rgba(255, 215, 0, 0.05);
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            background: rgba(155, 89, 182, 0.05);
+            border: 1px solid rgba(155, 89, 182, 0.3);
             border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 25px;
+            padding: 30px;
+            margin-bottom: 30px;
         }
 
         .connection-title {
             font-size: 18px;
-            color: #FFD700;
-            margin-bottom: 15px;
+            color: #9b59b6;
+            margin-bottom: 20px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -134,7 +115,7 @@
         .connecting-text {
             font-size: 16px;
             color: #fff;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             animation: pulse 1.2s ease-in-out infinite;
         }
 
@@ -144,34 +125,26 @@
         }
 
         .info-grid {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .info-item {
-            flex: 1;
             background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(155, 89, 182, 0.2);
             border-radius: 12px;
-            padding: 12px 8px;
-        }
-
-        .info-item:last-child {
-            border-color: rgba(153, 50, 204, 0.4);
+            padding: 15px;
         }
 
         .info-label {
             font-size: 11px;
-            color: #FFD700;
+            color: #9b59b6;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 600;
-        }
-
-        .info-item:last-child .info-label {
-            color: #9932CC;
         }
 
         .info-value {
@@ -183,7 +156,7 @@
         .progress-bar {
             width: 100%;
             height: 8px;
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(155, 89, 182, 0.1);
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 15px;
@@ -191,10 +164,10 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #FFD700 0%, #9932CC 100%);
+            background: linear-gradient(90deg, #9b59b6 0%, #8e44ad 100%);
             border-radius: 10px;
             animation: progress 0.15s ease-out forwards;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 20px rgba(155, 89, 182, 0.6);
         }
 
         @keyframes progress {
@@ -202,22 +175,30 @@
             100% { width: 100%; }
         }
 
-        .redirect-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 10px 0 5px;
+        .countdown {
+            font-size: 48px;
+            font-weight: 700;
+            color: #9b59b6;
+            margin: 20px 0;
+            text-shadow: 0 0 30px rgba(155, 89, 182, 0.8);
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #9b59b6;
+            font-weight: 500;
         }
 
         .status-dot {
             display: inline-block;
             width: 10px;
             height: 10px;
-            background: #FFD700;
+            background: #9b59b6;
             border-radius: 50%;
+            margin-right: 8px;
             animation: blink 1s ease-in-out infinite;
-            box-shadow: 0 0 15px #FFD700;
+            box-shadow: 0 0 15px #9b59b6;
         }
 
         @keyframes blink {
@@ -225,98 +206,32 @@
             50% { opacity: 0.3; }
         }
 
-        .redirect-text {
-            color: #FFD700;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .countdown {
-            font-size: 48px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #FFD700 0%, #9932CC 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 5px 0 10px;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-        }
-
-        .footer-text {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #FFD700;
-            font-weight: 500;
-        }
-
-        .discord-box {
-            background: rgba(153, 50, 204, 0.1);
-            border: 1px solid rgba(153, 50, 204, 0.3);
-            border-radius: 30px;
-            padding: 10px 20px;
-            margin: 15px auto 0;
-            display: inline-block;
-        }
-
-        .discord-text {
-            color: #9932CC;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .discord-text span {
-            color: #FFD700;
-            font-weight: 700;
-        }
-
-        /* RESPONSIVO */
-        @media (max-width: 600px) {
+        /* RESPONSIVO PARA TABLETS */
+        @media (max-width: 768px) {
             .container {
-                padding: 30px 25px;
-                max-width: 500px;
+                padding: 40px 45px;
+                max-width: 420px;
             }
 
-            .info-grid {
-                flex-wrap: wrap;
+            .logo {
+                font-size: 28px;
             }
 
-            .info-item {
-                min-width: 120px;
+            .subtitle {
+                font-size: 13px;
+                margin-bottom: 35px;
             }
 
-            .logo-zenith {
-                font-size: 32px;
+            .connection-box {
+                padding: 25px;
             }
 
-            .logo-liphyr {
-                font-size: 22px;
+            .connection-title {
+                font-size: 16px;
             }
 
-            .countdown {
-                font-size: 42px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-
-            .container {
-                padding: 25px 20px;
-            }
-
-            .info-grid {
-                gap: 8px;
-            }
-
-            .info-item {
-                padding: 10px 5px;
-            }
-
-            .info-label {
-                font-size: 10px;
+            .connecting-text {
+                font-size: 15px;
             }
 
             .info-value {
@@ -324,15 +239,118 @@
             }
 
             .countdown {
+                font-size: 42px;
+            }
+        }
+
+        /* RESPONSIVO PARA CELULARES */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 30px 25px;
+                border-radius: 20px;
+            }
+
+            .logo {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .subtitle {
+                font-size: 11px;
+                margin-bottom: 25px;
+            }
+
+            .connection-box {
+                padding: 20px;
+                border-radius: 14px;
+                margin-bottom: 20px;
+            }
+
+            .connection-title {
+                font-size: 14px;
+                margin-bottom: 15px;
+                letter-spacing: 1px;
+            }
+
+            .connecting-text {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .info-grid {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .info-item {
+                padding: 12px 10px;
+                border-radius: 10px;
+            }
+
+            .info-label {
+                font-size: 9px;
+                margin-bottom: 6px;
+            }
+
+            .info-value {
+                font-size: 16px;
+            }
+
+            .progress-bar {
+                height: 6px;
+                margin-bottom: 12px;
+            }
+
+            .countdown {
                 font-size: 36px;
+                margin: 15px 0;
             }
 
-            .discord-box {
-                padding: 8px 16px;
+            .footer-text {
+                margin-top: 20px;
+                font-size: 11px;
             }
 
-            .discord-text {
+            .logo.footer-logo {
+                font-size: 13px;
+                margin-top: 8px;
+            }
+
+            .status-dot {
+                width: 8px;
+                height: 8px;
+                margin-right: 6px;
+            }
+
+            .redirect-text {
                 font-size: 12px;
+            }
+        }
+
+        /* RESPONSIVO PARA CELULARES MUITO PEQUENOS */
+        @media (max-width: 360px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .connection-title {
+                font-size: 13px;
+            }
+
+            .info-value {
+                font-size: 15px;
+            }
+
+            .countdown {
+                font-size: 32px;
             }
         }
     </style>
@@ -345,11 +363,8 @@
     </div>
 
     <div class="container">
-        <div class="logo-container">
-            <div class="logo-zenith">ZENITH</div>
-            <div class="logo-liphyr">X LIPHYR</div>
-        </div>
-        <div class="subtitle">Conexão Premium</div>
+        <div class="logo">ZYRA NOTIFIER</div>
+        <div class="subtitle">Fast Connection</div>
 
         <div class="connection-box">
             <div class="connection-title">CONEXÃO RÁPIDA</div>
@@ -357,16 +372,20 @@
 
             <div class="info-grid">
                 <div class="info-item">
-                    <div class="info-label">STATUS</div>
-                    <div class="info-value" id="status">Conectado</div>
+                    <div class="info-label">Status</div>
+                    <div class="info-value" id="status">Iniciando</div>
                 </div>
                 <div class="info-item">
-                    <div class="info-label">PROXY</div>
+                    <div class="info-label">Tempo</div>
+                    <div class="info-value" id="time">0s</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Proxy</div>
                     <div class="info-value">Ativo</div>
                 </div>
                 <div class="info-item">
-                    <div class="info-label">SERVIDOR</div>
-                    <div class="info-value" id="server">BR-01</div>
+                    <div class="info-label">Servidor</div>
+                    <div class="info-value" id="server">-</div>
                 </div>
             </div>
 
@@ -374,28 +393,32 @@
                 <div class="progress-fill"></div>
             </div>
 
-            <div class="redirect-container">
-                <span class="status-dot"></span>
-                <span class="redirect-text">Redirecionando em:</span>
+            <div class="redirect-text" style="color: #9b59b6; font-size: 14px; margin-bottom: 10px; font-weight: 600;">
+                <span class="status-dot"></span>Redirecionando em:
             </div>
             <div class="countdown" id="countdown">3</div>
         </div>
 
         <div class="footer-text">Conexão otimizada e acelerada</div>
-        
-        <div class="discord-box">
-            <div class="discord-text">DISCORD • <span>@liphyxrc</span></div>
-        </div>
+        <div class="logo footer-logo" style="font-size: 16px; margin-top: 10px;">ZYRA NOTIFIER FAST</div>
     </div>
 
     <script>
         let count = 3;
+        let time = 0;
         const countdownEl = document.getElementById('countdown');
         const statusEl = document.getElementById('status');
+        const timeEl = document.getElementById('time');
         const serverEl = document.getElementById('server');
 
-        statusEl.textContent = 'Conectado';
+        const timeInterval = setInterval(() => {
+            time++;
+            timeEl.textContent = time + 's';
+        }, 1000);
+
+        statusEl.textContent = 'Conectando';
         serverEl.textContent = 'BR-01';
+        statusEl.textContent = 'Conectado';
 
         const countInterval = setInterval(() => {
             count--;
@@ -403,15 +426,20 @@
             
             if (count <= 0) {
                 clearInterval(countInterval);
+                clearInterval(timeInterval);
                 statusEl.textContent = 'Redirecionando';
                 
+                // Pega o gameInstanceId da URL atual
                 const urlParams = new URLSearchParams(window.location.search);
                 const gameInstanceId = urlParams.get('gameInstanceId') || 'default-instance';
+                
+                // Place ID fixo
                 const placeId = '109983668079237';
                 
+                // Redireciona para o jogo do Roblox
                 window.location.href = `roblox://placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
             }
-        }, 1000);
+        }, 1000); // Alterado de 1ms para 1000ms (1 segundo) para contagem correta
     </script>
 </body>
 </html>
